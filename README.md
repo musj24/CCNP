@@ -52,9 +52,19 @@
 -----------------------------------------
 <img width="853" height="340" alt="image" src="https://github.com/user-attachments/assets/2bcbe940-52e5-47e3-9d15-4984222fdda6" />
 
-- Ethernet MTU : 이더넷 프레임에서, 이더넷 헤더와 트레일러를 제외한 페이로드의 크기 (1500)
-- IP MTU : IP, TCP 헤더와 데이터를 합한 크기 (1500)
+- Ethernet MTU : 이더넷 프레임에서, 이더넷 헤더와 트레일러를 제외한 페이로드의 크기 (1500) , 인터페이스에서 수신 가능한 페이로드의 최대 크기를 지정
+
+
+<img width="1406" height="343" alt="image" src="https://github.com/user-attachments/assets/cab2f8aa-092f-425a-9d41-2c821f2f5c69" />
+
+- IP MTU : IP, TCP 헤더와 데이터를 합한 크기 (1500) , 조각화 되기전의 최대 크기를 지정 (L2 에선 조각화가 불가능하고, 드롭만 가능함) , IP MTU는 Ethernet MTU의 값보다 작거나 같다
+
+<img width="1898" height="352" alt="image" src="https://github.com/user-attachments/assets/687405ca-5111-4a67-80aa-db0c94e63981" />
+
+- system MTU : 시스템 전체에 MTU 적용 (인터페이스에 적용하는 MTU가 우선순위가 더 높음)
+
 - TCP MSS : 순수 데이터의 크기 (1500 - IP,TCP 헤더 20 20 = 1460)
 - baby giant : 1500 보단 크고, 점보 보단 작음
 - jumbo : 1500 보다 훨씬 큼
 - super jumbo : 데이터 센터등에 사용되는 매우 큰 프레임
+- 
