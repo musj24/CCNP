@@ -6,6 +6,9 @@
 - MAC 주소 계산 및 요청등의 기본은 Next Hop 이다.
 - FIB (Forward Information Base)는 route table의 핵심(목적지, 출력 인터페이스, 다음 홉 등)을 하드웨어칩 (ASIC)에 복사해뒀다가, 패킷이 들어오면 CPU를 거치지 않고 포워딩함
 
+- ethernet
+<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/2937adb0-c6f5-4f97-a4ca-a48b64dbf1e8" />
+
 
 
 
@@ -65,6 +68,7 @@
  - system mtu : 1/100mbps 이더넷 인터페이스에 적용되는 MTU
  - system jumbo mtu : 1g/10gbps 이더넷 인터페이스에 적용되는 MTU
  - system alternate mtu : 또 다른 옵션
+ - system routing mtu : 시스템 전체에 적용되는 IP MTU
 
 <img width="996" height="442" alt="image" src="https://github.com/user-attachments/assets/c775278f-5b3f-4299-b182-12e04c390bab" />
 
@@ -73,8 +77,15 @@
   - 따라서 터널의 MTU는 기존 MTU보다 24byte 적게 설정해야 한다.
 
 
-- TCP MSS : 순수 데이터의 크기 (1500 - IP,TCP 헤더 20 20 = 1460)
+
 - baby giant : 1500 보단 크고, 점보 보단 작음
 - jumbo : 1500 보다 훨씬 큼
 - super jumbo : 데이터 센터등에 사용되는 매우 큰 프레임
+- Runt : 최소 크기보다 작은 프레
+- PMTUD : 조각화가 필요없는 경로를 찾는 절차, DF bit를 set 하고 drop 되지 않을때까지 패킷 크기를 조절함
 
+
+# MSS
+------------------------------------------------
+- TCP MSS : 순수 데이터의 크기 (1500 - IP,TCP 헤더 20 20 = 1460)
+- 
