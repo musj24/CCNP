@@ -7,7 +7,14 @@
 - FIB (Forward Information Base)는 route table의 핵심(목적지, 출력 인터페이스, 다음 홉 등)을 하드웨어칩 (ASIC)에 복사해뒀다가, 패킷이 들어오면 CPU를 거치지 않고 포워딩함
 
 - ethernet
-<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/2937adb0-c6f5-4f97-a4ca-a48b64dbf1e8" />
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
+
+
+- IP
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/7f78b82a-6aaf-4a8a-a7ee-854bd2334b42" />
+
+- TCP/UDP
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5342d1ea-f96f-4681-a879-c13e59af5e8c" />
 
 
 
