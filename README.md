@@ -62,9 +62,19 @@
 <img width="1898" height="352" alt="image" src="https://github.com/user-attachments/assets/687405ca-5111-4a67-80aa-db0c94e63981" />
 
 - system MTU : 시스템 전체에 MTU 적용 (인터페이스에 적용하는 MTU가 우선순위가 더 높음)
+ - system mtu : 1/100mbps 이더넷 인터페이스에 적용되는 MTU
+ - system jumbo mtu : 1g/10gbps 이더넷 인터페이스에 적용되는 MTU
+ - system alternate mtu : 또 다른 옵션
+
+<img width="996" height="442" alt="image" src="https://github.com/user-attachments/assets/c775278f-5b3f-4299-b182-12e04c390bab" />
+
+- GRE 환경 MTU
+  - GRE 터널 환경에선 기존 IP 패킷에 GRE 헤더 (4byte)와 Outer IP 헤더 (20byte)가 추가 되기 때문에, 기존 패킷에 24byte가 더해진다.
+  - 따라서 터널의 MTU는 기존 MTU보다 24byte 적게 설정해야 한다.
+
 
 - TCP MSS : 순수 데이터의 크기 (1500 - IP,TCP 헤더 20 20 = 1460)
 - baby giant : 1500 보단 크고, 점보 보단 작음
 - jumbo : 1500 보다 훨씬 큼
 - super jumbo : 데이터 센터등에 사용되는 매우 큰 프레임
-- 
+
