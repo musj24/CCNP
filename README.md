@@ -47,3 +47,10 @@
   - BF : 기본 전송
  
 
+
+# MTU
+-----------------------------------------
+<img width="853" height="340" alt="image" src="https://github.com/user-attachments/assets/2bcbe940-52e5-47e3-9d15-4984222fdda6" />
+
+- Ethernet MTU : 이더넷 프레임에서, 이더넷 헤더와 트레일러를 제외한 페이로드의 크기
+- 
