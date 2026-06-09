@@ -4,7 +4,10 @@
 ---------------------------------
 - Directed Broadcast : 허용하면 서브넷 범위의 브로드캐스트 주소를 이용하여, 브로드캐스트 요청이 가능함. ex) 192.168.154.0/24 범위의 192.168.154.255 주소로 ping을 요청하면 해당 서브넷의 모든 노드들이 응답을 함.
 - MAC 주소 계산 및 요청등의 기본은 Next Hop 이다.
-- FIB (Forward Information Base)는 route table의 핵심(목적지, 출력 인터페이스, 다음 홉 등)을 하드웨어칩 (ASIC)에 복사해뒀다가, 패킷이 들어오면 CPU를 거치지 않고 포워딩함
+- control plane : 라우팅 프로토콜 및 테이블 구축
+- data plane : 경로 찾기 및 실제 데이터 포워딩
+
+  
 
 - ethernet
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
@@ -13,8 +16,7 @@
 - IP
 <img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/7f78b82a-6aaf-4a8a-a7ee-854bd2334b42" />
 
-- TCP/UDP
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5342d1ea-f96f-4681-a879-c13e59af5e8c" />
+
 
 
 
@@ -58,7 +60,7 @@
  
 
 
-# MTU
+# MTU (2 ~ 3계층)
 -----------------------------------------
 <img width="853" height="340" alt="image" src="https://github.com/user-attachments/assets/2bcbe940-52e5-47e3-9d15-4984222fdda6" />
 
@@ -91,9 +93,33 @@
 - Runt : 최소 크기보다 작은 프레
 - PMTUD : 조각화가 필요없는 경로를 찾는 절차.
     - DF bit를 set 하고 패킷을 보냈을때, 받는쪽의 MTU보다 패킷이 크다면 drop 해버리고 크기를 더 작게 보내라고 메시지를 보내어 drop 되지 않을때까지 패킷 크기를 조절함
+    - 하지만 상대가 보안상 ICMP 응답을 deny 하면 ICMP 단편화 필요 응답을 받을수 없기 때문에 불가능 함
 
 
-# MSS
+# MSS (4계층 전용 (TCP 등))
 ------------------------------------------------
 - TCP MSS : 순수 데이터의 크기 (1500 - IP,TCP 헤더 20 20 = 1460)
-- 
+- 전송 가능한 TCP 메시지의 크기를 정함
+- 기본값으로, 로컬네트워크는 1460byte, 타네트워크는 536byte이다.
+
+
+# TCP
+-------------------------------------------------
+- TCP/UDP
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5342d1ea-f96f-4681-a879-c13e59af5e8c" />
+
+- Window Size : host가 Ack 받기전에 수신 가능한 데이터의 크기
+
+
+# CEF (FIB)
+---------------------------------------------------
+- FIB (Forward Information Base)는 route table의 핵심(목적지, 출력 인터페이스, 다음 홉 등)을 하드웨어칩 (ASIC)에 복사해뒀다가, 패킷이 들어오면 CPU를 거치지 않고 포워딩함
+- ASIC : 패킷을 고속 처리하는 전용 칩. CPU와 다르게 패킷 포워딩 작업 처리에 특화됨
+- CAM : 콘텐츠 주소 지정메모리. 스위치가 MAC 주소를 빠르게 조회하는 데 사용하는 메모리
+- TCAM : CAM보다 발달한 형식
+
+- 패킷 포워딩기반
+  - 소프트웨어 : 범용 CPU를 사용하여 포워딩 함. control 및 data plane이 공유됨. 느리지만 프로그래밍이 가능하고 유연함
+  - 하드웨어 : CPU가 control plane을 처리하고, ASIC이 data plane 처리함
+  - 하이브리드 : CPU가 control plane을 처리하고, Network Processor가 data plane 처리함
+    - NP : 패킷 전달 및 기타 네트워크 관련 기능을 위한 프로세서. 프로그래밍 가능하고 유연함. NP가 처리 불가능한 패킷은 CPU가 처리함
