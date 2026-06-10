@@ -6,7 +6,9 @@
 - MAC 주소 계산 및 요청등의 기본은 Next Hop 이다.
 - control plane : 라우팅 프로토콜 및 테이블 구축
 - data plane : 경로 찾기 및 실제 데이터 포워딩
-
+- 패킷 스위칭 : L3 포워딩
+- 프레임 스위칭 : L2 포워딩
+- RIB : 라우팅 테이블
   
 
 - ethernet
@@ -123,3 +125,10 @@
   - 하드웨어 : CPU가 control plane을 처리하고, ASIC이 data plane 처리함
   - 하이브리드 : CPU가 control plane을 처리하고, Network Processor가 data plane 처리함
     - NP : 패킷 전달 및 기타 네트워크 관련 기능을 위한 프로세서. 프로그래밍 가능하고 유연함. NP가 처리 불가능한 패킷은 CPU가 처리함
+
+- 패킷 포워딩 방법
+  - process switching : 라우터가 각 패킷에 대해 CPU를 사용하여, 라우팅 테이블 조회를 수행함
+  - fast switching : 라우터가 메모리에 고속 전환 캐시를 구축하여, 후속 캐시에 대해 빠른 조회 및 포워딩 지원
+  - CEF : data plane에 구축된 두 개의 캐시를 이용하여 빠른 포워딩
+    - FIB : control plane에 있는 RIB를 기반으로, data plane에 재구성. L3 정보 제공
+    - adjancency table : ARP 테이블 기반으로 구축함. L2 정보 제공
