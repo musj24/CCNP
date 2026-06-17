@@ -8,8 +8,14 @@
 - data plane : 경로 찾기 및 실제 데이터 포워딩
 - 패킷 스위칭 : L3 포워딩
 - 프레임 스위칭 : L2 포워딩
-- RIB : 라우팅 테이블
-  
+- 재귀경로 : ip route 192.168.2.0 255.255.255.0 10.1.1.2 등으로, Next hop을 ip 주소로 지정하는 방식
+  - 192.168.2.0/24로 나가는 경로를 10.1.1.2 주소의 인터페이스로 잡기위해, 10.1.1.2 를 가지고있는 인터페이스를 다시 RIB에서 검색하는 재귀적 방법
+  - 10.1.1.2와 인터페이스 방향 하나만 테이블에 올라와, ARP 테이블이 간결함
+- 직접연결 정적 경로 : ip route 192.168.2.0 255.255.255.0 GigabitEthernet0/1 등으로, netx hop을 인터페이스로 지정하는 방식
+  - 192.168.2.0/24로 나가는 경로를 특정 인터페이스로 지정함. PtoP 환경에서 주로 사용함.
+  - next hop에 대한 주소를 모르기 때문에, 목적지 주소에 대해 바로 ARP를 수행함. 상대 장비가 Proxy ARP를 안해주면 통신 불가능
+  - 목표 IP 주소 하나마다 ARP 테이블이 채워지기 때문에, 테이블 고갈 가능성이 있음
+- 완전지정 정적 경로 : next hop을 ip와 인터페이스 둘다 지정하여, 빠르게 포워딩도 하면서 ARP 대상도 명시하는 방법 (권장)
 
 - ethernet
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
@@ -132,3 +138,26 @@
   - CEF : data plane에 구축된 두 개의 캐시를 이용하여 빠른 포워딩
     - FIB : control plane에 있는 RIB를 기반으로, data plane에 재구성. L3 정보 제공
     - adjancency table : ARP 테이블 기반으로 구축함. L2 정보 제공
+
+
+# L2
+-----------------------------------------------------
+- mac address-table aging-time : 기본 300초
+- mac address-table static 0c84.639c.0000 vlan [] int [] : 인터페이스에 mac 주소를 static 매핑
+  - vlan을 지정 하는 이유
+    - 동일한 MAC 주소가 다른 vlan에 있을수 있기 때문(vlan 마다 mac table 존재)
+    - 스위치의 동작 방식이 MAC 주소 보다 vlan을 먼저 확인하기 때문
+    - Trunk port 등
+
+# L3
+-----------------------------------------------------
+- 라우팅 테이블 올릴때, AD를 고려하여 올린다. 경로를 결정할땐 LPM을 우선 고려하고 값이 같다면 Metric을 비교한다.
+- show ip route [ip] : RIB 기반으로 경로 출력
+- show ip cef [ip] : FIB 기반으로 경로 출력
+
+# ARP
+-----------------------------------------------------
+- show logging : logging level 확인 및 log 확인
+- logging console [] : logging level 설정
+- debug arp
+- 
