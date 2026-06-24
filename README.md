@@ -124,7 +124,7 @@
 - FIB (Forward Information Base)는 route table의 핵심(목적지, 출력 인터페이스, 다음 홉 등)을 하드웨어칩 (ASIC)에 복사해뒀다가, 패킷이 들어오면 CPU를 거치지 않고 포워딩함
 - ASIC : 패킷을 고속 처리하는 전용 칩. CPU와 다르게 패킷 포워딩 작업 처리에 특화됨
 - CAM : 콘텐츠 주소 지정메모리. 스위치가 MAC 주소를 빠르게 조회하는 데 사용하는 메모리
-- TCAM : CAM보다 발달한 형식
+- TCAM : CAM이 L2 주소를 처리한 후에, L3 주소를 확인하는 메모리. FIB가 저장됨
 
 - 패킷 포워딩기반
   - 소프트웨어 : 범용 CPU를 사용하여 포워딩 함. control 및 data plane이 공유됨. 느리지만 프로그래밍이 가능하고 유연함
@@ -138,6 +138,14 @@
   - CEF : data plane에 구축된 두 개의 캐시를 이용하여 빠른 포워딩
     - FIB : control plane에 있는 RIB를 기반으로, data plane에 재구성. L3 정보 제공
     - adjancency table : ARP 테이블 기반으로 구축함. L2 정보 제공
+
+- 로드 밸런싱
+  - per-destination : 패킷의 src/des IP를 참조하여 암호 생성함. 그것과 같은 암호들은 같은 회선으로 이동
+  - per-packet : 패킷을 RR 방식으로, 정확히 분배함
+
+- DCEF
+  - 분배형CEF
+  - CPU가 만든 FIB / 인접 테이블의 복사본을 각 슬롯, 라인 카드등에 탑재하여, 개개인의 ASIC과 TCAM, 인접 테이블등을 가지고 빠른 처리 가능
 
 
 # L2
