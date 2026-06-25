@@ -168,4 +168,23 @@
 - show logging : logging level 확인 및 log 확인
 - logging console [] : logging level 설정
 - debug arp
-- 
+
+# Memory
+-----------------------------------------------------
+- ROM : 컴퓨터의 BIOS. 하드웨어 부팅 (POST) , ROMMON 담당.
+- DRAM : 컴퓨터의 RAM. running config , RIB 등 실시간 설정
+- SRAM : DRAM보다 작고 빠름. 인접테이블 및 캐시 버퍼 등
+- NVRAM : start config 저장
+- flash : SSD. OS나 로그파일등 저장
+- EEPROM : 장비 DNA 확인
+
+# Switch stacking
+-----------------------------------------------------
+- 여러 대의 스위치를 논리적인 하나로 묶는 기술
+- 장비 config 관리 및 STP로 인한 대역폭 차단을 완화하기 위해 사용. Control plane은 활성 스위치에 의해 관리되고, data plane은 분산됨
+- MEC : 멀티 섀시 이더채널, 서로 다른 스위치를 하나의 논리적 스위치로 묶어서, 이더채널을 사용함
+  - 채널을 각기 스위치 A,B에 나누어 꽂아도 STP로 인한 block이 없음
+  - 이중화 가능 및 대역폭 + 로드밸런싱 온전히 사용 가능
+- Interface Numbering : Switch/Slot/Port
+
+- VSS : 레거시 기술, VSL (virtual switch link)로 상호 연결. 2대만 연결 가능하며, Active/Standby로 나뉨
