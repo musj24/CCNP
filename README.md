@@ -17,6 +17,7 @@
   - 목표 IP 주소 하나마다 ARP 테이블이 채워지기 때문에, 테이블 고갈 가능성이 있음
 - 완전지정 정적 경로 : next hop을 ip와 인터페이스 둘다 지정하여, 빠르게 포워딩도 하면서 ARP 대상도 명시하는 방법 (권장)
 
+
 - ethernet
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
 
@@ -187,12 +188,40 @@
   - 이중화 가능 및 대역폭 + 로드밸런싱 온전히 사용 가능
 - Interface Numbering : Switch/Slot/Port
 
+- StackWise : 전용 스태킹 포트에 연결하여 1대의 Master와 나머지의 Member로 묶음
+  - SDP : Stack/StackWise Discovery Protocol : 이웃 찾는 프로토콜
+
 - VSS : 레거시 기술, VSL (virtual switch link)로 상호 연결. 2대만 연결 가능하며, Active/Standby로 나뉨
   - VSLP : VSL 제어 프로토콜
-    - LMP : Link Management Protocol, 이웃 장비와 케이블 상태 확인
+    - LMP : Link Management Protocol, 이웃 장비와 케이블 상태 확인. 단방향 링크 거부함
     - RRP : Role Resolution Protocol, priority 기반으로 Active/Standby를 결정함
-- StackWise : 전용 스태킹 포트에 연결하여 1대의 Master와 나머지의 Member로 묶음
+  - RPR :  Standby로 전환시, RIB와 OSPF 상태 등을 reboot하여 처음부터 시작하는 프로토콜, Standby는 기본적으로 최소한의 가동 준비만 하고있음
+  - SSO : Standby가 Active와 동일한 정보를 실시간으로 복사하여 대기하는 상태, Active down시 즉시 넘겨받음
 - StackWiseVirtual : VSS와 마찬가지로, 2대만 상호 연결. SVL (stackwise virtual link)로 연결하며, Activa/Standby로 나뉨
   - VSS와 차이 : DAD (Dual-Active Detection)
   - Active와 연결이 끊겼을때, 서로 Active가 되려고 하는 SplitBrain 현상을 막기위한 기술
   - 별도의 백업 감시선을 연결하여, SVL이 끊겨도 Active의 생존을 알림
+
+# SSO (고가용성)
+----------------------------------------------------
+- Active가 Down 됐을때, Standby로 넘어가는 방법
+- SSO : Stateful SwitchOver, Standby가 Active의 MAC 주소, 인터페이스 정보, FIB 등을 복사해 뒀다가, Active 사망시 바로 전환하여 Forwarding을 멈추지 않음
+  - OSPF 상태등을 알지는 못함
+- NSF : Non-Stop Forwarding, SSO와 함께 움직이는 기술. 라우팅 프로토콜이 죽은동안, FIB를 지우지 않고 계속 포워딩함. (라우팅 프로토콜 재부팅동안 FIB를 지우지 않는 역할이 메인)
+- GR : Graceful-Restart, NSF를 달성하기 위한 기술. 주변 helper 들의 도움을 받아 OSPF 인접을 끊지 않고 패킷 포워딩 수행 가능하게 함
+- NSR : Non-Stop Routing, Standby가 Active의 control plane 전체를 실시간 동기화 해뒀다가, 장애시 이어받음. helper 필요 없음
+
+- cold standby : 백업이 전원만 켜져있고, OS 등을 올리지 않은 상태
+- warm standby : OS 등은 올려놨지만, FIB/MAC 등은 올리지 않은 상태
+- hot standby : Active와 완전 동기화되어 대기하는 상태
+
+# 부팅 타입
+-----------------------------------------------------
+- Cold boot : 장비의 전원이 꺼진 상태부터, 하드웨어와 소프트웨어를 부팅
+- warm boot : 전원은 켜져있고, reload 등으로 시스템만 재시작
+
+# SDM
+----------------------------------------------------
+- Swithcing Database Manager : ASIC 내부의 CAM과 TCAM에 할당할 장부 등록 제한 설정
+  - 스위치가 L2 위주라면 CAM을, L3 위주라면 TCAM 위주로 장부를 등록한다
+  - 
