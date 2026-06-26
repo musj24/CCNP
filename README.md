@@ -188,3 +188,11 @@
 - Interface Numbering : Switch/Slot/Port
 
 - VSS : 레거시 기술, VSL (virtual switch link)로 상호 연결. 2대만 연결 가능하며, Active/Standby로 나뉨
+  - VSLP : VSL 제어 프로토콜
+    - LMP : Link Management Protocol, 이웃 장비와 케이블 상태 확인
+    - RRP : Role Resolution Protocol, priority 기반으로 Active/Standby를 결정함
+- StackWise : 전용 스태킹 포트에 연결하여 1대의 Master와 나머지의 Member로 묶음
+- StackWiseVirtual : VSS와 마찬가지로, 2대만 상호 연결. SVL (stackwise virtual link)로 연결하며, Activa/Standby로 나뉨
+  - VSS와 차이 : DAD (Dual-Active Detection)
+  - Active와 연결이 끊겼을때, 서로 Active가 되려고 하는 SplitBrain 현상을 막기위한 기술
+  - 별도의 백업 감시선을 연결하여, SVL이 끊겨도 Active의 생존을 알림
