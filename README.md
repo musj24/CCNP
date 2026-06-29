@@ -224,4 +224,48 @@
 ----------------------------------------------------
 - Swithcing Database Manager : ASIC 내부의 CAM과 TCAM에 할당할 장부 등록 제한 설정
   - 스위치가 L2 위주라면 CAM을, L3 위주라면 TCAM 위주로 장부를 등록한다
-  - 
+
+# ICMP
+----------------------------------------------------
+<img width="1472" height="825" alt="image" src="https://github.com/user-attachments/assets/1d860af9-a4ea-4125-b0e7-63d386acee45" />
+
+
+- L3 프로토콜
+- IP 헤더의 protocol 번호 1번
+- payload에 ICMP 헤더와 ICMP data 포함됨
+- Header
+  - 8byte 고정 값
+  - 1byte : type , 1byte : code , 2byte : checksum, 4byte : rest of header
+  - type
+    - 0 : reply
+    - 3 : Unreachable
+    - 5 : redirect
+    - 8 : request
+    - 11 : time exceeded
+  - Unreachable code
+    - type 3일때, 그 사유를 설명해주는 code
+    - code 0 : network unreachable, 해당 network의 route가 없음
+    - code 1 : host unreachable , 해당 network의 route는 찾았지만, 대상 장비의 응답이 없음
+    - code 2 : protocol unreachable, 장비와 Ping 연결은 성공했지만 프로토콜 처리가 안되는 경우
+    - code 3 : port unreachable, 장비가 해당 서비스를 거부하고 있는 경우
+    - code 4 : DF bit set , MTU를 초과하는 패킷을 분할 거부하는 경우
+    - code 13 : administratively prohibit , ACL 등에 거부당하는 경우
+  - redirect
+    - 호스트에게 목적지를 향한 다른 경로를 사용하도록 알리는 데 사용
+  - time exceeded
+    - TTL 또는 단편화 재조립 대기 시간 초과 등
+    - code 0 : TTL 만료
+    - code 1 : 단편화 재조립 대기 시간 초과
+  - rest of header
+    - type 0 , 8 : 핑 송수신때, 앞의 2byte가 프로세스 구분, 뒤의 2byte가 순서 구분
+    - type 3의 code 4 : 앞의 2byte는 unuse, 뒤의 2byte는 netx-hop MTU 삽입
+    - type 5 : 지름길의 IP 주소 삽입
+- ping
+  - icmp type 0 , 8 이며, code 는 항상 0이다.
+  - rest of header : Identifier / Sequence Number
+  - Identifier : 명령어 한번 기준의 식별자, "ping" 이란 명령 한번의 request / reply 는 같은 식별자를 가진다
+  - Sequence Number : request / reply 의 순서, ping 명령에서 각 request 와 reply는 같은 짝의 번호를 가진다
+  - 최소 크기인 46byte를 위해, 18byte의 padding을 추가 하기도함
+- ICMPv6
+  <img width="1468" height="824" alt="image" src="https://github.com/user-attachments/assets/c1f77a4b-0543-426c-938a-d01c029171b9" />
+
