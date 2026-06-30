@@ -16,7 +16,7 @@
   - next hop에 대한 주소를 모르기 때문에, 목적지 주소에 대해 바로 ARP를 수행함 (직접 연결로 간주하는 상태) 상대 장비가 Proxy ARP를 안해주면 통신 불가능
   - 목표 IP 주소 하나마다 ARP 테이블이 채워지기 때문에, 테이블 고갈 가능성이 있음
 - 완전지정 정적 경로 : next hop을 ip와 인터페이스 둘다 지정하여, 빠르게 포워딩도 하면서 ARP 대상도 명시하는 방법 (권장)
-
+- logging monitor , console , buffer (monitor terminal)
 
 - ethernet
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
