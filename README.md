@@ -173,10 +173,10 @@
 # Memory
 -----------------------------------------------------
 - ROM : 컴퓨터의 BIOS. 하드웨어 부팅 (POST) , ROMMON 담당.
-- DRAM : 컴퓨터의 RAM. running config , RIB 등 실시간 설정
+- DRAM : 컴퓨터의 RAM. running config , RIB, 로그 등 실시간 설정
 - SRAM : DRAM보다 작고 빠름. 인접테이블 및 캐시 버퍼 등
 - NVRAM : start config 저장
-- flash : SSD. OS나 로그파일등 저장
+- flash : SSD. OS등 저장
 - EEPROM : 장비 DNA 확인
 
 # Switch stacking
@@ -280,5 +280,15 @@
   - 비대칭 경로에 의해 순방향 전송은 성공했는데, 역방향에서 다른 경로로 오다가 끊겨버리는 경우
   - ECMP에 의해 패킷이 각기 다른 루트로 전송 및 수신되는 경우
   - ICMP rate-limit에 의해 바쁜 라우터가 ICMP 응답을 늦게 하는 경우
-  - ACL이나 방화벽등에 의해 silence drop 되는 경우
+  - ACL이나 방화벽등에 의해 drop 되는 경우
+  - ip unreachable 응답을 안하는 경우
+
+# debug
+-----------------------------------------------------------------------------
+- 전체적인 debug와 condition debug로 나뉨
+- 대표
+  - debug ip ospf adjacencies : OSPF 이웃맺기 단계 감시
+  - debug ip packet : 해당 장비를 통과하거나, 자신을 대상으로 하는 패킷들의 L3 헤더를 모두 보여줌
+  - debug condition
+  - service timestamps debug datetime msec : 디버그 로그를 0.001초 단위로 찍음
 
