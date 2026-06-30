@@ -269,3 +269,16 @@
 - ICMPv6
   <img width="1468" height="824" alt="image" src="https://github.com/user-attachments/assets/c1f77a4b-0543-426c-938a-d01c029171b9" />
 
+# Traceroute
+---------------------------------------------------------------------------
+- TTL 감소를 기반으로한 route 파악
+- window에선 tracert 명령어 및 ICMP로 송신 및 응답 받음
+- cisco, linux 등에선 UDP로 송신하고, ICMP로 응답 받음
+  - 사용하지 않는 UDP 포트로 송신하여, ICMP type 3 의 code 3인 port unreachable 을 받아옴
+- 중간 홉 응답은 ICMP type 11 code 0 인 time exceeded를 받고, 마지막 응답은 window에선 reply, 다른 장비들은 port unreachable
+- 한계
+  - 비대칭 경로에 의해 순방향 전송은 성공했는데, 역방향에서 다른 경로로 오다가 끊겨버리는 경우
+  - ECMP에 의해 패킷이 각기 다른 루트로 전송 및 수신되는 경우
+  - ICMP rate-limit에 의해 바쁜 라우터가 ICMP 응답을 늦게 하는 경우
+  - ACL이나 방화벽등에 의해 silence drop 되는 경우
+
