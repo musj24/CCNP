@@ -2,6 +2,7 @@
 - 헷갈리거나 몰랐던 내용들
 
 ---------------------------------
+- ARP 테이블은 자기 대역 내에서만 올라온다. 네트워크가 넘어가면 어차피 GW로 타야하니까.
 - Directed Broadcast : 허용하면 서브넷 범위의 브로드캐스트 주소를 이용하여, 브로드캐스트 요청이 가능함. ex) 192.168.154.0/24 범위의 192.168.154.255 주소로 ping을 요청하면 해당 서브넷의 모든 노드들이 응답을 함.
 - MAC 주소 계산 및 요청등의 기본은 Next Hop 이다.
 - control plane : 라우팅 프로토콜 및 테이블 구축
@@ -16,7 +17,7 @@
   - next hop에 대한 주소를 모르기 때문에, 목적지 주소에 대해 바로 ARP를 수행함 (직접 연결로 간주하는 상태) 상대 장비가 Proxy ARP를 안해주면 통신 불가능
   - 목표 IP 주소 하나마다 ARP 테이블이 채워지기 때문에, 테이블 고갈 가능성이 있음
 - 완전지정 정적 경로 : next hop을 ip와 인터페이스 둘다 지정하여, 빠르게 포워딩도 하면서 ARP 대상도 명시하는 방법 (권장)
-- logging monitor , console , buffer (monitor terminal)
+- logging monitor , console , buffer (terminal monitor)
 
 - ethernet
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2aa9ddf3-71dc-4c83-8a4e-b527ef388045" />
@@ -99,7 +100,7 @@
 - baby giant : 1500 보단 크고, 점보 보단 작음
 - jumbo : 1500 보다 훨씬 큼
 - super jumbo : 데이터 센터등에 사용되는 매우 큰 프레임
-- Runt : 최소 크기보다 작은 프레
+- Runt : 최소 크기보다 작은 프레임
 - PMTUD : 조각화가 필요없는 경로를 찾는 절차.
     - DF bit를 set 하고 패킷을 보냈을때, 받는쪽의 MTU보다 패킷이 크다면 drop 해버리고 크기를 더 작게 보내라고 메시지를 보내어 drop 되지 않을때까지 패킷 크기를 조절함
     - 하지만 상대가 보안상 ICMP 응답을 deny 하면 ICMP 단편화 필요 응답을 받을수 없기 때문에 불가능 함
@@ -288,7 +289,33 @@
 - 전체적인 debug와 condition debug로 나뉨
 - 대표
   - debug ip ospf adjacencies : OSPF 이웃맺기 단계 감시
-  - debug ip packet : 해당 장비를 통과하거나, 자신을 대상으로 하는 패킷들의 L3 헤더를 모두 보여줌
+  - debug ip packet : 해당 장비를 통과하거나, 자신을 대상으로 하는 패킷들의 L3 헤더를 모두 보여줌 (하드웨어 스위칭되는 패킷은 안잡힘)
   - debug condition
   - service timestamps debug datetime msec : 디버그 로그를 0.001초 단위로 찍음
 
+
+# VLAN
+-----------------------------------------------------------------------------
+- Stretched vlan : site 마다 같은 vlan과, 같은 대역을 부여하고, trunk로 site간 연결하는 구세대 방식
+  - broadcast storm 발생시, 다른 site의 vlan 까지 마비됨
+- local vlan : site 마다 다른 대역으로, L3를 통해 site간 연결하는 현대 표준
+- multiple subnets vlan : 일반적으로 하나의 서브넷에 하나의 vlan이 정석
+  - 하나의 vlan에 primary , secondary 대역을 넣어서 다른 서브넷도 같은 vlan에 포함시킴
+- vlan shutdown , suspend
+  - vlan 명령어 내부에서 shutdown시, local 에서 포워딩을 중단하는 효과 (VTP domain 에선 살아있음)
+  - vlan 명령어 내부에서 state suspend시, VTP 도메인 전체에 영향을 끼침
+- internal vlan
+  - L3급 switch 에서, no switchport를 issue 했을 때 생기는 숨겨진 vlan.
+  - port 에 ip 를 부여하면, 숨겨진 vlan의 SVI에 IP가 부여된다. 트래픽이 오고갈때, 이 port 에 인입되는 패킷들은 숨겨진 vlan의 tag 를 달고 들어와, 내외부와 라우팅 가능해짐
+  - ++ ip routing 명령어는 스위치 내부의 FIB 와 CEF 등의 기능을 활성화 시킴
+- access port
+  - untagged port
+  - access port 는 untagged frame이 수신 되어야 함.
+  - VoIP 같은 특수 상황에선 access port 라도 전용 vlan 할당 가능
+- trunk port
+  - tagged port
+  - 802.1q 가 Source mac과 ether type 사이, 4byte 크기로 삽입됨
+  - native vlan은 trunk port 에서도 untagged로 나갈수있다.
+    - native 인척 속이면서 다른 vlan에 침투하는 double tag 공격에 이용될수 있으니, native는 안쓰는 번호로 지정해야함
+    - 인터페이스마다 다른 native vlan을 가질수있음
+  
