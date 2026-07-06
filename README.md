@@ -318,4 +318,24 @@
   - native vlan은 trunk port 에서도 untagged로 나갈수있다.
     - native 인척 속이면서 다른 vlan에 침투하는 double tag 공격에 이용될수 있으니, native는 안쓰는 번호로 지정해야함
     - 인터페이스마다 다른 native vlan을 가질수있음
+    - allowed vlan == add [] tagged
+- PVID
+  - 패킷이 포트로 인입될때, 어떤 vlan에 속할지 구별함. 반대로 포트에서 나갈땐 untagged/tagged (access/trunk)가 기능함
+  - native vlan과 동일한 개념
+  - access vlan 10 untagged 는 포트에서 나갈때, PC가 이해할수 있게 tag를 떼는것
+  - add vlan 99 1 set pvid 99 는 포트 1번에 PC가 보낸 untagged 프레임이 들어올 때, vlan 99번에 속하게 하는것
+
+
+# DTP
+-------------------------------------------------------------------------------------
+- Dynamic Trunking Protocol
+- nego를 통해, ISL/dot1q , trunk/access 등을 자동 협상하는 프로토콜
+- VTP 도메인이 일치하지 않으면, 협상하지 못함
+- switch mode access , 또는 switch nonegotiate 명령어로 DTP를 disable 가능
+<img width="1279" height="720" alt="image" src="https://github.com/user-attachments/assets/b145beb2-10b4-4787-bbef-21adbaac90b2" />
+ - O : operation, 현재 상태
+ - A : administrative, 내가 입력한 상태
+ - N : negotiate, 협상 결과
+ - S : status, 포트모드 (trunk or access)
+ - T : type, encapsulation 형태 (ISL or dot1q)
   
