@@ -355,6 +355,7 @@
   - v3 : server , client , transparent , off
     - v3의 server는 primary / secondary 로 나뉜다.
     - vtp primary 로 설정된 한 대의 스위치만 vlan 수정이 가능함.
+      - primary 충돌시, revision number 가 높은쪽이 더 우세하고, tie-break시 MAC이 높은쪽이 우선임
   - transparent : 자신이 NULL 일때 모든 vtp packet forward
     - 자신의 domain이 있을 때, 일치하는 domain forward
     - 평소엔 자신의 local vlan 권한
