@@ -338,4 +338,39 @@
  - N : negotiate, 협상 결과
  - S : status, 포트모드 (trunk or access)
  - T : type, encapsulation 형태 (ISL or dot1q)
-  
+
+# VTP
+------------------------------------------------------------------------------------
+- 스위치가 VTP domain 내의 스위치들과 vlan 정보를 공유하는 프로토콜
+- vlan 생성 , 삭제 , 수정 등의 정보를 공유하며, 할당 등은 하지않음
+- vtp domain이 NULL인 스위치는 기본적으로 광고를 송신하지 않지만, vtp domain을 수신 받으면, 그 domain 에 속하게된다
+- 버전 1의 스위치가 버전 2의 정보를 수신 받으면, 스스로 버전2로 업데이트함
+- vtp packet은 trunk port 에서만 전송됨
+- revision number : 장부를 수정 할 때마다 증가하는 번호. 클 수록 최신의 정보로 판단함
+  - 수신 받은 vtp packet의 number가 높으면, 그 정보로 동기화함
+  - vtp bomb 등의 참사 원인
+- 버전 1,2는 vlan 0 ~ 1005 까지, 버전 3은 0 ~ 4094 까지 지원함
+- VTP mode
+  - v1/v2 : server , client , transparent
+  - v3 : server , client , transparent , off
+    - v3의 server는 primary / secondary 로 나뉜다.
+    - vtp primary 로 설정된 한 대의 스위치만 vlan 수정이 가능함.
+  - transparent : 자신이 NULL 일때 모든 vtp packet forward
+    - 자신의 domain이 있을 때, 일치하는 domain forward
+    - 평소엔 자신의 local vlan 권한
+    - revision number가 항상 0 이다.
+  - off : transparent 와 기본적으로 동일하지만, VTP packet을 forward도 하지 않음.
+- VTP 인증
+  - vtp password [비밀번호] : 비밀번호 MD5 암호화. 받은 vtp packet 과 동일할 경우 동기화함
+  - transparent 는 단순히 forward 하기 때문에, password 일치 여부는 상관안하고 바로 forwarding
+  - VTPv3
+    - hidden : 평문을 16진수 암호문으로 변경
+    - secret : hidden 된 암호문을 다른 장비에 복사할때, "이미 암호화된 상태임"을 알려주는 키워드
+- VTP 비교
+  - v1과 v2는 v2에서 tokken ring과 자잘한 기능 몇가지 추가된것 이외엔 큰 차이가 없음
+  - v3 에선 hidden , secret이 추가 되었고, 확장 vlan 사용이 가능하다.
+  - v3 에선 primary / secondary server가 나뉘어져 있다.
+    - 장비 리부팅 / 도메인 및 암호 변경 / 다른 스위치에서 primary 명령어 입력시 / 기존의 primary server 권한이 박탈됨
+
+
+
