@@ -372,6 +372,10 @@
   - v3 에선 hidden , secret이 추가 되었고, 확장 vlan 사용이 가능하다.
   - v3 에선 primary / secondary server가 나뉘어져 있다.
     - 장비 리부팅 / 도메인 및 암호 변경 / 다른 스위치에서 primary 명령어 입력시 / 기존의 primary server 권한이 박탈됨
+- Pruning
+  - 특정 스위치에서 사용되지 않는 vlan에 대해, 트래픽 전송을 하지 않는 기술
+  - v1,v2 는 server에서 설정시 자동전파 되지만, v3 에선 스위치마다 설정해야 함.
+
 
 
 
