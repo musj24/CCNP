@@ -378,6 +378,12 @@
   - 특정 스위치에서 사용되지 않는 vlan에 대해, 트래픽 전송을 하지 않는 기술
   - v1,v2 는 server에서 설정시 자동전파 되지만, v3 에선 스위치마다 설정해야 함.
 
+# STP
+-----------------------------------------------------------------------------------------
+- BID : priority + MAC , 낮을수록 높은 우선순위 (Root bridge)
+- RP : Lowest root cost > Lowest neighbor BID > Lowest neighbor port ID > Lowest local port ID
+- DP : Lowest root cost > Lowest BID switch > Lowest local port ID
+
 
 
 
