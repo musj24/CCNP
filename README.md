@@ -386,8 +386,11 @@
 - max age : root 에게서 받은 BPDU가 끊겼을 때, 토폴로지를 지우지 않고 대기하는 시간
 - TCN : 토폴로지 변경 감지시, 루트포트를 향해(상위 스위치) 2초마다 전송함
 - TCA : TCN 수신 시, 응답하여 TCN 전송을 중단시킴
-- TC : TCN을 수신 받은 root가 forward delay를 15초로 단축하여, 하위 스위치에게 토폴로지 변경을 전송함.
+- TC : TCN을 수신 받은 root가 forward delay(aging time - 기본 300초)를 15초로 단축하여, 하위 스위치에게 토폴로지 변경을 전송함.
   - 하위 스위치들은 자신의 mac aging을 15초로 단축시켜, 새로운 정보 갱신을 유도함
 - BPDU는 구성 BPDU와 TCN BPDU로 나뉜다.
-- 
+- 우선순위 튜닝
+  - primary 명령어는 priority를 24576 또는 현재 root 보다 4096 낮은 값으로 치환하여 입력하고, secondary 는 28672 로 치환된다.
+  - 전역 port cost와 vlan port cost가 같이 설정되어 있다면, vlan port cost가 우선 순위로 적용된다.
+  - bridge priority , port cost , port priority
 
