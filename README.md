@@ -395,7 +395,7 @@
   - bridge priority , port cost , port priority
 - uplinkfast : 차단된 포트를 가진 스위치에서만 사용 (L2 액세스 스위치 등). 메인 링크(루트포트) 단절시 백업 포트를 빠르게 forward 상태로 전환. 해당 스위치에만 구성함. 직접 링크 장애
   - 차단된 포트의 listen + learn 시간 총 30초를 단축
-- backupfast : 모든 스위치에 구성해야 함. 다른 스위치가 링크가 단절되어, 열등한 BPDU를 보내왔을때, 루트 스위치에게 RLQ 패킷으로 루트의 생존을 확인하고, 막혀있던 다른 포트를 열어줌. 간접 링크 장애
+- backbonefast : 모든 스위치에 구성해야 함. 다른 스위치가 링크가 단절되어, 열등한 BPDU를 보내왔을때, 루트 스위치에게 RLQ 패킷으로 루트의 생존을 확인하고, 막혀있던 다른 포트를 열어줌. 간접 링크 장애
   - max age 시간 총 20초 단축
 - portfast
   - 보통 액세스 모드에서만 동작 (전역 설정시 마찬가지)
@@ -408,5 +408,6 @@
   - port 지정 : 포트에서 BPDU 송수신을 중단 (위험)
   - 전역 : portfast 포트들에 적용됨. 링크업때만 bpdu를 송신해보고 수신되면 일반 STP 동작으로 복귀
 - err-discovery, recovery : 기본적으로 discovery는 모든 사유에 대해 활성화, recovery는 비활성화라서 recovery 항복은 enable시 지정을 해줘야함
-- root guard : 설정 포트에 현재보다 우월한 BPDU 수신시, root-inconsistent 상태로 전환. 사유 해소시 자동 복구
-- loop guard : 설정 포트에 BPDU 인입이 중단시, loop-inconsistent 상태로 전환. 사유 해소시 자동 복구
+- root guard : 설정 포트(지정포트)에 현재보다 우월한 BPDU 수신시, root-inconsistent 상태로 전환. 사유 해소시 자동 복구
+  - 멀티 vlan 환경에선, 다른 vlan 정보가 들어오는 trunk 포트에 거는것을 주의해야 함. 
+- loop guard : 설정 포트(비지정포트)에 BPDU 인입이 중단시, loop-inconsistent 상태로 전환. 사유 해소시 자동 복구
