@@ -411,3 +411,16 @@
 - root guard : 설정 포트(지정포트)에 현재보다 우월한 BPDU 수신시, root-inconsistent 상태로 전환. 사유 해소시 자동 복구
   - 멀티 vlan 환경에선, 다른 vlan 정보가 들어오는 trunk 포트에 거는것을 주의해야 함. 
 - loop guard : 설정 포트(비지정포트)에 BPDU 인입이 중단시, loop-inconsistent 상태로 전환. 사유 해소시 자동 복구
+
+# RSTP
+-----------------------------------------------------------------------------------------------
+- cost
+<img width="1385" height="622" alt="image" src="https://github.com/user-attachments/assets/cc232c18-3066-475b-9d05-0e4924f9a90f" />
+- state
+  - discarding(disable + listening) , learning , forwarding
+- 협상 메커니즘
+<img width="1379" height="777" alt="image" src="https://github.com/user-attachments/assets/dc68c2a2-640e-4d8a-9548-9fd45cffd101" />
+
+  - RSTP간 : 
+
+
