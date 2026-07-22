@@ -421,6 +421,16 @@
 - 협상 메커니즘
 <img width="1379" height="777" alt="image" src="https://github.com/user-attachments/assets/dc68c2a2-640e-4d8a-9548-9fd45cffd101" />
 
-  - RSTP간 : 
-.
+  - RSTP간 : 포트가 올라오면 discardport 를 바로 DP로 지정하여, 맞은편 스위치랑 빠르게 협상함. 협상에 성공하면 delay 없이 바로 forwarding 상태가 됨
+    - 반대편 스위치가 RSTP가 아니라면 협상 메커니즘이 실패하고, 기존 구조대로 15초 + 15초를 기다렸다가 forwarding 됨
+    
+- 포트 역할
+  - RP , DP (forwarding)
+  - AP , BP (discarding)
+    - AP : RP의 대타
+    - BP : DP의 대타, 같은 스위치에서 허브등의 동일한 회선에 포트 2개를 동시에 꽂으면 생김
 
+- 링크 타입
+  - P2P : Full 로 설정된 포트. 0초 협상 가능. 1:1 연결
+  - Shared : Hafl 로 설정된 포트. 0초 협상 불가능. 허브 등으로 회선 공유
+  - Edge : 앤드 호스트 포트. Sync 협상 안함. 
