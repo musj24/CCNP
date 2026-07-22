@@ -422,5 +422,5 @@
 <img width="1379" height="777" alt="image" src="https://github.com/user-attachments/assets/dc68c2a2-640e-4d8a-9548-9fd45cffd101" />
 
   - RSTP간 : 
-
+.
 
