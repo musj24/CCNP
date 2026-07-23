@@ -443,3 +443,7 @@
       - agreement 답장을 보내기 전, 해당 스위치는 자신의 포트중 edge를 제외한 포트들은 순간적으로 discarding 시켜 루프를 방지함 (Sync)
     - 3 : 상호 연결된 포트를 즉시 forwarding으로 개시
 
+- 토폴로지 변경
+  - Edge port 제외한 포트들이 forwarding이 될때 TC가 발생
+  - TC 발생시 스위치는 MAC 테이블을 flush 하고, 자신의 모든 non-edge 포트에 TC flag를 hello time의 2배 시간만큼 전파함 (보통 4초)
+
