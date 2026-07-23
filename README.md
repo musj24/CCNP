@@ -423,7 +423,7 @@
 
   - RSTP간 : 포트가 올라오면 discardport 를 바로 DP로 지정하여, 맞은편 스위치랑 빠르게 협상함. 협상에 성공하면 delay 없이 바로 forwarding 상태가 됨
     - 반대편 스위치가 RSTP가 아니라면 협상 메커니즘이 실패하고, 기존 구조대로 15초 + 15초를 기다렸다가 forwarding 됨
-    
+    - P2P가 아닌 Shared 환경이면 STP 협상 방법을 사용함
 - 포트 역할
   - RP , DP (forwarding)
   - AP , BP (discarding)
@@ -433,4 +433,13 @@
 - 링크 타입
   - P2P : Full 로 설정된 포트. 0초 협상 가능. 1:1 연결
   - Shared : Hafl 로 설정된 포트. 0초 협상 불가능. 허브 등으로 회선 공유
-  - Edge : 앤드 호스트 포트. Sync 협상 안함. 
+  - Edge : 앤드 호스트 포트. Sync 협상 안함.
+
+- 수렴
+  - designate bridge : 한 회선의 대장 스위치 (DP 보유 스위치)
+  - proposal & agreement : 포트가 살아나면 스위치가 자신을 root 라고 여기고 상대에게 BPDU를 송신함 (DP 포트)
+    - 1 : proposal bit를 set 해서 BPDU 송신함 (동의 구하기)
+    - 2 : 상대 스위치가 서열 계산후, 자신의 포트를 RP로 바꾸고 Agreement bit를 set 해서 답장
+      - agreement 답장을 보내기 전, 해당 스위치는 자신의 포트중 edge를 제외한 포트들은 순간적으로 discarding 시켜 루프를 방지함 (Sync)
+    - 3 : 상호 연결된 포트를 즉시 forwarding으로 개시
+
