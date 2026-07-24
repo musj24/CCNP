@@ -447,3 +447,41 @@
   - Edge port 제외한 포트들이 forwarding이 될때 TC가 발생
   - TC 발생시 스위치는 MAC 테이블을 flush 하고, 자신의 모든 non-edge 포트에 TC flag를 hello time의 2배 시간만큼 전파함 (보통 4초)
 
+# MSTP
+-----------------------------------------------------------------------------------------------
+- VLAN 그룹별로 MSTI에 묶어서 관리하는 기술
+- 기본적으로 모든 VLAN은 MST0에 속하게 된다.
+- long cost 사용
+
+- region
+  - MSTP는 스위치들을 묶을때 MCID (MSTP configuration identifier) 값으로 구별하여 묶음
+  - MCID
+    - Configuration Identifier Format Selector (포맷 선택자)
+    - Configuration Name (동네 이름)
+      - 관리자가 입력한 Region 이름. 대소문자 구별함
+    - Configuration Revision (버전 번호)
+      - 관리자가 설정하는 버전 숫자
+    - Configuration Digest (설정 요약 해시값)
+      - vlan to mstp 매핑 테이블을 바탕으로 계산된 hash 값
+  - IST
+    - region 내부 연결 네트워크
+  - CST (common spanning tree)
+    - 다른 region 끼리 통신시 경로 계산하는 규칙
+    - 서로의 MST0 우선순위가 높은 쪽이 root가 된다
+  - CIST
+    - 네트워크 내의 모든 스위치를 하나로 묶는 거대한 스패닝 트리
+    - CIST root : 전체 네트워크 서열 1위 (MST0 priority)
+    - CIST regional root : 각 region에서 CIST root와 연결된 대표 스위치
+      - boundary port가 존재해야 함
+      - external root path cost가 가장 작아야 함
+      - priority가 더 작아야 함
+  - Boundary port
+    - root가 아닌 region의, 다른 region과 맞닿아 있는 포트
+  - External root path cost
+    - 내 boundary port 에서 CIST root로 가는 비용
+  - Internal root path cost
+    - 내 region 에서 region의 root로 향하는 비용
+  
+  
+
+
