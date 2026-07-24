@@ -465,6 +465,7 @@
       - vlan to mstp 매핑 테이블을 바탕으로 계산된 hash 값
   - IST
     - region 내부 연결 네트워크
+    - BPDU를 전송하는 유일한 인스턴스
   - CST (common spanning tree)
     - 다른 region 끼리 통신시 경로 계산하는 규칙
     - 서로의 MST0 우선순위가 높은 쪽이 root가 된다
