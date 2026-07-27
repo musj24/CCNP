@@ -449,9 +449,17 @@
 
 # MSTP
 -----------------------------------------------------------------------------------------------
+<img width="2560" height="1682" alt="image" src="https://github.com/user-attachments/assets/57a17a20-48df-4117-913b-bd3a3b9f82ab" />
+<img width="2400" height="1900" alt="image" src="https://github.com/user-attachments/assets/9b8b2aae-ae36-4426-b727-2d688ac93d3d" />
+
+
+
+
+
 - VLAN 그룹별로 MSTI에 묶어서 관리하는 기술
 - 기본적으로 모든 VLAN은 MST0에 속하게 된다.
 - long cost 사용
+- region , revision number , instance 가 모두 일치해야 같은 region 으로 인식됨
 
 - region
   - MSTP는 스위치들을 묶을때 MCID (MSTP configuration identifier) 값으로 구별하여 묶음
@@ -463,9 +471,9 @@
       - 관리자가 설정하는 버전 숫자
     - Configuration Digest (설정 요약 해시값)
       - vlan to mstp 매핑 테이블을 바탕으로 계산된 hash 값
-  - IST
+  - IST (MSTI 0)
     - region 내부 연결 네트워크
-    - BPDU를 전송하는 유일한 인스턴스
+    - BPDU를 전송하는 유일한 인스턴스 
   - CST (common spanning tree)
     - 다른 region 끼리 통신시 경로 계산하는 규칙
     - 서로의 MST0 우선순위가 높은 쪽이 root가 된다
@@ -478,6 +486,8 @@
       - priority가 더 작아야 함
   - Boundary port
     - root가 아닌 region의, 다른 region과 맞닿아 있는 포트
+  - master port
+    - CIST regional root 의 CIST root 에게로 향하는 root port
   - External root path cost
     - 내 boundary port 에서 CIST root로 가는 비용
   - Internal root path cost
