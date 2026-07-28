@@ -492,7 +492,13 @@
     - 내 boundary port 에서 CIST root로 가는 비용
   - Internal root path cost
     - 내 region 에서 region의 root로 향하는 비용
-  
-  
+
+- PVST+ 연계
+  - MSTP와 PVST+ 가 연계된 환경에서, MSTP 스위치가 PVST+ 스위치의 BPDU를 수신할 때 MSTP 스위치는 VLAN 1 BPDU를 MSTI0에 매핑한다.
+  - MSTP 에서 PVST+ 로 BPDU 전송될 때, MSTI0 BPDU가 복제되어 PVST+ 스위치의 각 vlan에 전송된다.
+  - MSTP를 지원하지 않는 스위치와 연결된 포트들은 모두 boundary port 이다.
+  - 상호간 연결은 표준 STP 절차를 사용한다.
+  - CIST Root ∈ 리전 안	CIST Root	VLAN 2+ BID가 CIST Root보다 열등
+  - CIST Root ∈ 리전 밖	VLAN 1	VLAN 2+ BID가 VLAN 1보다 우월
 
 
