@@ -15,3 +15,10 @@ network switching and forwarding - packet forwading
     - DEI(CFI), drop eligible indicator, 혼잡시 드랍 여부 flag, 1bit
     - vlan id, 12bit
 
+<img width="1865" height="910" alt="image" src="https://github.com/user-attachments/assets/239b8243-6b2b-4b70-ba3f-8bf633659119" />
+
+- MAC address table은 논리적, control plane 영역이고,
+- MAC table 기반으로 제작된 CAM은 물리적인 data plane 영역이다.
+- show interface [ ] switchport
+<img width="878" height="454" alt="image" src="https://github.com/user-attachments/assets/0f425e56-635b-48d2-b3b0-4c08fcf6c323" />
+
