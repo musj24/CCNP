@@ -5,3 +5,13 @@ network switching and forwarding - packet forwading
 - enhanced TCP/IP model
   - OSI 계층과 L1 - L4 까지 동일하게 매핑
   - OSI 계층의 L5 - L7 부터, TCP/IP model은 L5로 매핑한다.
+
+<img width="1910" height="937" alt="image" src="https://github.com/user-attachments/assets/1fb96bfd-d698-4c7b-9a1f-96766ee2437a" />
+
+- Dot1q tag (4 byte)
+  - TPID, 0x8100 (2byte)
+  - TCI (2byte)
+    - PCP(Cos), priority code point, 3bit. 000 to 111
+    - DEI(CFI), drop eligible indicator, 혼잡시 드랍 여부 flag, 1bit
+    - vlan id, 12bit
+
