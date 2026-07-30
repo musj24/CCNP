@@ -2,6 +2,8 @@
 -----------------------------------------------------------------
 network switching and forwarding - packet forwading
 ----------------------------------------------------------------
+- L1 ~ L2
+
 - enhanced TCP/IP model
   - OSI 계층과 L1 - L4 까지 동일하게 매핑
   - OSI 계층의 L5 - L7 부터, TCP/IP model은 L5로 매핑한다.
@@ -18,7 +20,10 @@ network switching and forwarding - packet forwading
 <img width="1865" height="910" alt="image" src="https://github.com/user-attachments/assets/239b8243-6b2b-4b70-ba3f-8bf633659119" />
 
 - MAC address table은 논리적, control plane 영역이고,
-- MAC table 기반으로 제작된 CAM은 물리적인 data plane 영역이다.
-- show interface [ ] switchport
+- MAC table 기반으로 제작된 CAM은 물리적인 data plane 영역이고, 사실상 MAC과 CAM은 같은 개념임
+- show interface [ ] switchport , show interface status
 <img width="878" height="454" alt="image" src="https://github.com/user-attachments/assets/0f425e56-635b-48d2-b3b0-4c08fcf6c323" />
+------------------------------------------------------------------
+- L3
+- 
 
