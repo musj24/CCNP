@@ -15,7 +15,7 @@ network switching and forwarding - packet forwading
   - TCI (2byte)
     - PCP(Cos), priority code point, 3bit. 000 to 111
     - DEI(CFI), drop eligible indicator, 혼잡시 드랍 여부 flag, 1bit
-    - vlan id, 12bit
+    - vlan id, 12bit-
 
 <img width="1865" height="910" alt="image" src="https://github.com/user-attachments/assets/239b8243-6b2b-4b70-ba3f-8bf633659119" />
 
