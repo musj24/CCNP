@@ -23,6 +23,7 @@ network switching and forwarding - packet forwading
 - MAC table 기반으로 제작된 CAM은 물리적인 data plane 영역이고, 사실상 MAC과 CAM은 같은 개념임
 - show interface [ ] switchport , show interface status
 <img width="878" height="454" alt="image" src="https://github.com/user-attachments/assets/0f425e56-635b-48d2-b3b0-4c08fcf6c323" />
+
 ------------------------------------------------------------------
 - L3
 - 
