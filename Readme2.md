@@ -33,4 +33,6 @@ network switching and forwarding - packet forwading
 
 <img width="1911" height="842" alt="image" src="https://github.com/user-attachments/assets/cff15805-6a86-4fa7-9b8f-5135a6d410d7" />
 
+<img width="1904" height="826" alt="image" src="https://github.com/user-attachments/assets/6f1c41bd-b6a4-4390-915a-abe7cb1c2774" />
+
 
