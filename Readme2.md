@@ -35,4 +35,13 @@ network switching and forwarding - packet forwading
 
 <img width="1904" height="826" alt="image" src="https://github.com/user-attachments/assets/6f1c41bd-b6a4-4390-915a-abe7cb1c2774" />
 
+<img width="1901" height="824" alt="image" src="https://github.com/user-attachments/assets/19d7dffa-7eb8-4436-a9b9-1495c49a91ef" />
+- ASIC은 유연성이 없는 고정 역할, NPU는 재프로그래밍이 가능함
+
+<img width="1904" height="823" alt="image" src="https://github.com/user-attachments/assets/295c9ed3-6554-4ffb-9f91-46786e568b02" />
+
+<img width="1907" height="821" alt="image" src="https://github.com/user-attachments/assets/86a21f4d-e57c-4d35-931f-3baad048ddb4" />
+
+--------------------------------------------------------------------
+
 
