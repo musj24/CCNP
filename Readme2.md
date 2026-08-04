@@ -25,6 +25,12 @@ network switching and forwarding - packet forwading
 <img width="878" height="454" alt="image" src="https://github.com/user-attachments/assets/0f425e56-635b-48d2-b3b0-4c08fcf6c323" />
 
 ------------------------------------------------------------------
-- L3
-- 
+- packet forwarding architecture
+
+<img width="1780" height="767" alt="image" src="https://github.com/user-attachments/assets/558fc377-c11b-4fbd-b4cb-1b852ce633f3" />
+
+- flow : source , destination IP 및 port 와 프로토콜이 같은 모든 패킷
+
+<img width="1911" height="842" alt="image" src="https://github.com/user-attachments/assets/cff15805-6a86-4fa7-9b8f-5135a6d410d7" />
+
 
