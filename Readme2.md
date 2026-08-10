@@ -22,6 +22,7 @@ network switching and forwarding - packet forwading
 - MAC address table은 논리적, control plane 영역이고,
 - MAC table 기반으로 제작된 CAM은 물리적인 data plane 영역이고, 사실상 MAC과 CAM은 같은 개념임
 - show interface [ ] switchport , show interface status
+- mac address static은 특정 mac 주소로 향하는 트래픽을 특정 포트로 보내는 기술, 특정 mac을 특정 포트로 고정하는건 port security
 <img width="878" height="454" alt="image" src="https://github.com/user-attachments/assets/0f425e56-635b-48d2-b3b0-4c08fcf6c323" />
 
 ------------------------------------------------------------------
