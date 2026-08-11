@@ -49,4 +49,9 @@ network switching and forwarding - packet forwading
 - PVST , PVST+ 는 cisco 독자 프로토콜
 - 802.1W (RSTP), 802.1S (MSTP)는 표준
 
+<img width="1901" height="917" alt="image" src="https://github.com/user-attachments/assets/95866a3e-3a0e-47fb-97ba-00bd66b74aca" />
+<img width="1901" height="915" alt="image" src="https://github.com/user-attachments/assets/35a6f814-1a26-4b22-aeae-57a0c5d4e46a" />
+
+
+
 
