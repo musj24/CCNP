@@ -53,8 +53,10 @@ network switching and forwarding - packet forwading
 <img width="1901" height="915" alt="image" src="https://github.com/user-attachments/assets/35a6f814-1a26-4b22-aeae-57a0c5d4e46a" />
 
 --------------------------------------------------------------------
-# PVST+ (RSTP - 802.1W)
+# PVST+
 --------------------------------------------------------------------
+<img width="1878" height="891" alt="image" src="https://github.com/user-attachments/assets/40c7f242-3cda-43d7-962a-623ef613866f" />
+
 
 
 
