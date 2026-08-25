@@ -82,6 +82,18 @@ network switching and forwarding - packet forwading
 
 <img width="1889" height="938" alt="image" src="https://github.com/user-attachments/assets/98d1811a-3bae-4a87-ba5e-64b234dbb18e" />
 
+-----------------------------------------------------------------------
+# STP Tuning
+-----------------------------------------------------------------------
+<img width="1853" height="875" alt="image" src="https://github.com/user-attachments/assets/6765de67-b481-4065-b4f8-50ef9e72fde0" />
+
+<img width="1908" height="950" alt="image" src="https://github.com/user-attachments/assets/660d4dbe-fe37-477f-b195-c00681b6873c" />
+
+-----------------------------------------------------------------------
+# STP protect and loop prevent
+-----------------------------------------------------------------------
+
+
 
 
 
