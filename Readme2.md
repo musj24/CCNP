@@ -80,6 +80,8 @@ network switching and forwarding - packet forwading
 
 <img width="1885" height="937" alt="image" src="https://github.com/user-attachments/assets/6d8c0320-7fd3-4a32-8e40-ff078066727f" />
 
+<img width="1889" height="938" alt="image" src="https://github.com/user-attachments/assets/98d1811a-3bae-4a87-ba5e-64b234dbb18e" />
+
 
 
 
