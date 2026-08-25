@@ -72,5 +72,17 @@ network switching and forwarding - packet forwading
 -----------------------------------------------------------------------
 # STP convergence
 -----------------------------------------------------------------------
+<img width="1889" height="935" alt="image" src="https://github.com/user-attachments/assets/474bba7a-686a-4b11-8d75-ca0da1a3408e" />
+
+<img width="1887" height="907" alt="image" src="https://github.com/user-attachments/assets/a00e427f-0745-4355-a5e6-5e6101bb790d" />
+
+<img width="1888" height="938" alt="image" src="https://github.com/user-attachments/assets/b2a991da-b190-490c-9de8-353c7c74dacc" />
+
+<img width="1885" height="937" alt="image" src="https://github.com/user-attachments/assets/6d8c0320-7fd3-4a32-8e40-ff078066727f" />
+
+
+
+
+
 
 
