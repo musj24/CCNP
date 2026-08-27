@@ -92,8 +92,14 @@ network switching and forwarding - packet forwading
 -----------------------------------------------------------------------
 # STP protect and loop prevent
 -----------------------------------------------------------------------
+<img width="1886" height="881" alt="image" src="https://github.com/user-attachments/assets/eb430e3f-24ca-41f6-9462-339d2219ef1c" />
 
+<img width="1906" height="935" alt="image" src="https://github.com/user-attachments/assets/b22c3f68-e27b-4891-b720-f0fe58f1aa02" />
 
+ - UDLD 는 보통 fiber link(광)에 사용
+ - Normal : 단방향 발견시 에러만 띄움
+ - Aggressive : 단방향 발견시 err-disable
+ - UDLD 기본 hello time (udp) 는 15초
 
 
 
