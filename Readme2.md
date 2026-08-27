@@ -101,6 +101,7 @@ network switching and forwarding - packet forwading
  - Aggressive : 단방향 발견시 err-disable
  - UDLD 기본 hello time (udp) 는 15초
 
+<img width="1898" height="947" alt="image" src="https://github.com/user-attachments/assets/3843bddb-c69d-428a-b725-56bd06c81601" />
 
 
 
