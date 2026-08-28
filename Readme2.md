@@ -107,6 +107,12 @@ network switching and forwarding - packet forwading
 ------------------------------------------------------------------------
 #  RSTP 
 ------------------------------------------------------------------------
+<img width="1888" height="941" alt="image" src="https://github.com/user-attachments/assets/30ea1736-df78-4970-bbfa-586a4a202ce5" />
+
+<img width="1858" height="902" alt="image" src="https://github.com/user-attachments/assets/95c99d2e-bbac-440a-b0be-85853b32ec95" />
+
+
+
 
 
 
