@@ -111,6 +111,28 @@ network switching and forwarding - packet forwading
 
 <img width="1858" height="902" alt="image" src="https://github.com/user-attachments/assets/95c99d2e-bbac-440a-b0be-85853b32ec95" />
 
+------------------------------------------------------------------------
+# MSTP
+------------------------------------------------------------------------
+<img width="1910" height="927" alt="image" src="https://github.com/user-attachments/assets/f09fb5cc-b447-4bbe-8e84-4e4f4d10543c" />
+
+<img width="1558" height="892" alt="image" src="https://github.com/user-attachments/assets/4696b9af-d5bd-4701-a41d-3093ec69f099" />
+
+<img width="1904" height="929" alt="image" src="https://github.com/user-attachments/assets/324b2254-d422-4b35-9c26-4d9886daf414" />
+
+<img width="1910" height="929" alt="image" src="https://github.com/user-attachments/assets/bb1beb23-31af-4d3a-912f-32251bfa3830" />
+
+<img width="1901" height="928" alt="image" src="https://github.com/user-attachments/assets/3d1ad355-7d8d-4897-96c1-1d164f7265b6" />
+
+<img width="1889" height="908" alt="image" src="https://github.com/user-attachments/assets/5461c54e-8b7a-429b-8dc7-f424883f20cf" />
+
+
+
+
+
+
+
+
 
 
 
