@@ -126,6 +126,7 @@ network switching and forwarding - packet forwading
 
 <img width="1889" height="908" alt="image" src="https://github.com/user-attachments/assets/5461c54e-8b7a-429b-8dc7-f424883f20cf" />
 
+<img width="1249" height="143" alt="image" src="https://github.com/user-attachments/assets/6b2c4ab8-6c4d-4dcb-a469-c20a0681487b" />
 
 
 
