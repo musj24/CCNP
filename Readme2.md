@@ -128,6 +128,27 @@ network switching and forwarding - packet forwading
 
 <img width="1249" height="143" alt="image" src="https://github.com/user-attachments/assets/6b2c4ab8-6c4d-4dcb-a469-c20a0681487b" />
 
+------------------------------------------------------------------------
+# DTP
+------------------------------------------------------------------------
+<img width="1895" height="914" alt="image" src="https://github.com/user-attachments/assets/a7cf19eb-ccd2-4269-988f-df2233297cd1" />
+
+<img width="1896" height="912" alt="image" src="https://github.com/user-attachments/assets/b2cdeda5-a990-4fa3-8a6b-374726dd4bac" />
+
+<img width="1894" height="911" alt="image" src="https://github.com/user-attachments/assets/50fbf7d1-7496-42c5-8153-5f13f52366ef" />
+
+<img width="1898" height="915" alt="image" src="https://github.com/user-attachments/assets/24e5a0ee-d87b-4408-acad-47648b11d216" />
+
+<img width="1900" height="914" alt="image" src="https://github.com/user-attachments/assets/c06a8470-088f-4e65-89f0-64cc59e509b0" />
+
+<img width="1898" height="914" alt="image" src="https://github.com/user-attachments/assets/f05e9729-ce2e-488c-aa74-170c21383f29" />
+
+
+
+
+
+
+
 
 
 
