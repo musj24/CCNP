@@ -152,6 +152,19 @@ network switching and forwarding - packet forwading
 
 
 
+------------------------------------------------------------------------
+# Etherchannel
+------------------------------------------------------------------------
+<img width="1886" height="941" alt="image" src="https://github.com/user-attachments/assets/dcfd9b1b-5003-4ca8-9713-39afdc4a3ce8" />
+
+<img width="1885" height="911" alt="image" src="https://github.com/user-attachments/assets/962ddb9c-b4cd-4465-aaff-9672a75065c8" />
+
+<img width="1886" height="913" alt="image" src="https://github.com/user-attachments/assets/dfe3f98c-e7b3-44f7-81ad-d8410124a4db" />
+
+<img width="1888" height="938" alt="image" src="https://github.com/user-attachments/assets/5be2cd12-5ea7-43a6-829a-9f007f816015" />
+
+<img width="1889" height="940" alt="image" src="https://github.com/user-attachments/assets/6765d429-f977-41a9-ae38-bf0ae38ac1aa" />
+
 
 
 
