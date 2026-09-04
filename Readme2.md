@@ -167,6 +167,9 @@ network switching and forwarding - packet forwading
 
 <img width="1886" height="942" alt="image" src="https://github.com/user-attachments/assets/d1c01266-eba9-44c9-ada6-955338634c3f" />
 
+<img width="640" height="792" alt="image" src="https://github.com/user-attachments/assets/d9400ca9-3605-459e-8b17-579ab3a72fc8" />
+
+
 
 
 
