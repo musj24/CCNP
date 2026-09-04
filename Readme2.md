@@ -143,6 +143,15 @@ network switching and forwarding - packet forwading
 
 <img width="1898" height="914" alt="image" src="https://github.com/user-attachments/assets/f05e9729-ce2e-488c-aa74-170c21383f29" />
 
+------------------------------------------------------------------------
+# VTP
+------------------------------------------------------------------------
+<img width="1901" height="926" alt="image" src="https://github.com/user-attachments/assets/bc586c92-f323-4847-b23f-4af72975214c" />
+
+<img width="1908" height="933" alt="image" src="https://github.com/user-attachments/assets/560bc076-ad75-485a-ab72-789b2798b405" />
+
+
+
 
 
 
