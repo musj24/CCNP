@@ -181,7 +181,9 @@ network switching and forwarding - packet forwading
 
 <img width="562" height="773" alt="image" src="https://github.com/user-attachments/assets/6be9ae11-704d-42d0-8f10-1e7620b94aed" />
 
-
+------------------------------------------------------------------------
+# IP Routing Essential
+------------------------------------------------------------------------
 
  
 
