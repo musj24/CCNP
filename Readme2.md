@@ -169,6 +169,20 @@ network switching and forwarding - packet forwading
 
 <img width="640" height="792" alt="image" src="https://github.com/user-attachments/assets/d9400ca9-3605-459e-8b17-579ab3a72fc8" />
 
+<img width="1909" height="932" alt="image" src="https://github.com/user-attachments/assets/7c16637c-c73b-4905-84e0-3a487c1942d8" />
+
+<img width="1910" height="932" alt="image" src="https://github.com/user-attachments/assets/1985d3ed-7551-43e5-8f9b-a1818e27720b" />
+
+<img width="1906" height="932" alt="image" src="https://github.com/user-attachments/assets/faab51f0-be0d-4cf9-975d-63e210dc40f7" />
+
+<img width="1907" height="940" alt="image" src="https://github.com/user-attachments/assets/d338139b-cab6-4f29-b88b-74a3e24ff3ce" />
+
+<img width="1912" height="937" alt="image" src="https://github.com/user-attachments/assets/ef44b3f6-b72f-4c51-b70d-ffc4a694b7da" />
+
+
+ 
+
+
 
 
 
