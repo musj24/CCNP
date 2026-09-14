@@ -206,7 +206,25 @@ network switching and forwarding - packet forwading
 
 <img width="1873" height="925" alt="image" src="https://github.com/user-attachments/assets/13cb46fc-6d50-4ed5-8c25-55d71fbd480f" />
 
-<img width="1802" height="911" alt="image" src="https://github.com/user-attachments/assets/6bdb8636-aef6-47e0-8306-ef47c1a801bd" />
+<img width="1806" height="919" alt="image" src="https://github.com/user-attachments/assets/f6dec2d7-c07d-4fb7-80c4-14f9279e4a32" />
+
+<img width="1840" height="932" alt="image" src="https://github.com/user-attachments/assets/b83b1077-7dfd-4a00-8871-4dd98356aa36" />
+
+<img width="1789" height="794" alt="image" src="https://github.com/user-attachments/assets/07862a82-dee6-432a-85e0-0f5207fb3e9f" />
+
+<img width="1809" height="845" alt="image" src="https://github.com/user-attachments/assets/ea8b16ca-0d1b-4f06-b932-27fcd588f854" />
+
+<img width="1789" height="802" alt="image" src="https://github.com/user-attachments/assets/db8bd6f3-791a-43be-9e29-7e86b698f3b5" />
+
+<img width="1805" height="800" alt="image" src="https://github.com/user-attachments/assets/0489b853-f0c6-4bda-9aae-a7684a27438a" />
+
+<img width="1804" height="839" alt="image" src="https://github.com/user-attachments/assets/b4098e0e-e04f-4905-9021-5a3c3b605f90" />
+
+
+
+
+
+
 
 
 
