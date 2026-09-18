@@ -224,12 +224,24 @@ network switching and forwarding - packet forwading
 ------------------------------------------------------------------------
 # EIGRP
 ------------------------------------------------------------------------
+<img width="1877" height="923" alt="image" src="https://github.com/user-attachments/assets/95daa790-9b7e-4ea9-a09d-d1b540486836" />
+
+<img width="1868" height="920" alt="image" src="https://github.com/user-attachments/assets/6bac1b21-07f7-4c5b-aa78-7ca4ac9dedbc" />
+
+<img width="1868" height="889" alt="image" src="https://github.com/user-attachments/assets/4a5b3aac-a7c6-4b53-9a2a-f07e33abe590" />
+
+<img width="1868" height="864" alt="image" src="https://github.com/user-attachments/assets/c794337d-fa29-4849-abe5-8800d0facf20" />
+
+<img width="1865" height="961" alt="image" src="https://github.com/user-attachments/assets/8e619e39-27aa-44b6-a748-dbe432e78d01" />
+
+ <img width="1882" height="919" alt="image" src="https://github.com/user-attachments/assets/790b803a-7346-46b4-9b3a-21bc725d0932" />
 
 
 
 
 
 
+ 
 
 
 
