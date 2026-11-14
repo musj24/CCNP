@@ -34,8 +34,14 @@
 # OSPF
 ------------------------------------
 - ip ospf 는 기존 v4 에서 쓰이고, 그냥 ospf 는 ospfv4나 v6 에서 쓰이는 명령어
-- 
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b26a964-32c4-4f51-8b8c-44cef9d36bad" />
+
+- 각 라우터는 LSU를 보내어 서로 LSA(네트워크 토폴로지) 를 주고 받는다, 그리고 그 정보는 각자의 LSDB 에 저장된다.
+- OSPF는 3개의 테이블을 가진다.
+  - Neighborship table
+  - LSDB
+  - Routing table
 
 
 
