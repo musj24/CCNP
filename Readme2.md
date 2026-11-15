@@ -241,12 +241,21 @@ network switching and forwarding - packet forwading
 <img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/9685c3e9-fdcb-47b3-970b-752abccc91c2" />
 
 
+------------------------------------------------------------------------------
+# OSPF
+------------------------------------------------------------------------------
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/076772c1-4200-4aa7-b897-8c1bbb068920" />
 
+- 각 라우터는 LSU를 보내어 서로 LSA(네트워크 토폴로지) 를 주고 받는다, 그리고 그 정보는 각자의 LSDB 에 저장된다.
+- OSPF는 3개의 테이블을 가진다.
+  - Neighborship table
+  - LSDB
+  - Routing table
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6aeb14c0-3be4-4c96-9770-e060bff8ee9d" />
 
-
-
-
+- 기본적으로 서로 다른 영역끼리는 LSA를 전파하지 않음
+- 
 
  
 
