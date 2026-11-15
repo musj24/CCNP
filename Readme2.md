@@ -255,9 +255,28 @@ network switching and forwarding - packet forwading
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6aeb14c0-3be4-4c96-9770-e060bff8ee9d" />
 
 - 기본적으로 서로 다른 영역끼리는 LSA를 전파하지 않음
-- 
 
- 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82c2c5de-6dd9-4525-b568-c5f10dff1aae" />
+
+- 하지만 백본을 통해서 LSA type 3을 주고받아, 다른 영역의 네트워크로 통하는 간략한 정보를 취득함
+- 같은 영역에 있는 Router들은 같은 LSDB를 가진다.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/427a1ced-ec91-4288-bc87-567bd87891ed" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb24d8a0-af11-470c-81b0-6da13e6f0077" />
+
+
+- OSPF를 구성하는 두 가지 방법
+  - network 문
+  - interface 문
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ab07c6cd-34da-4926-832f-f4a4932d57e2" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/00d99bc9-18f6-471e-b562-3361b5613c5b" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/12caad72-45f0-4a2c-bedb-41e65b8d3b96" />
+
 
 
 
